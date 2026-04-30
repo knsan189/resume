@@ -6,14 +6,14 @@
 
 React, Next.js 기반 UI 개발뿐 아니라 Google Maps, Naver Maps, Mapbox GL 등 다양한 지도 provider를 다루며 지도 시각화와 사용자 인터랙션을 구현해왔습니다.
 
-Puppeteer 기반 브라우저 자동화, WebGL 실행 환경 구성, Ollama 기반 AI 기능 적용 등 서비스 운영에 필요한 문제를 직접 해결해왔으며, 불완전한 요구사항을 구조화해 기능 흐름과 UI로 빠르게 구현하는 데 강점이 있습니다.
+Puppeteer 기반 브라우저 자동화, WebGL 실행 환경 구성, Ollama 기반 AI 기능 적용 등 서비스 운영에 필요한 문제를 직접 해결해왔습니다. 기획이 구체화되지 않은 단계에서도 요구사항을 정리하고, 화면 구조와 기능 흐름을 먼저 구현해 제품 방향을 빠르게 검증하는 방식으로 일해왔습니다.
 
 ---
 
 ## Education
 
 **공주대학교 컴퓨터공학과 중퇴**  
-2011.03 ~ 2015.02 (4년)
+2011.03 ~ 2015.02
 
 ---
 
@@ -63,7 +63,8 @@ Puppeteer 기반 브라우저 자동화, WebGL 실행 환경 구성, Ollama 기�
 
 GPX 데이터를 기반으로 사용자 트래킹 경로를 시각화하고, 이를 영상 콘텐츠로 생성할 수 있는 지도 기반 서비스입니다. 지도 탐색, 활동 기록, 드론 영상 생성, 커뮤니티 피드 기능을 제공하며 GeoJSON 기반 지도 데이터 처리와 GPX 파일 업로드를 지원합니다.
 
-#### 사용자 웹
+<details>
+<summary>사용자 웹</summary>
 
 **주요 구현**
 
@@ -82,7 +83,10 @@ GPX 데이터를 기반으로 사용자 트래킹 경로를 시각화하고, 이
 - GPX 업로드부터 지도 경로 시각화까지 이어지는 핵심 사용자 흐름 구현
 - 지도 렌더링 및 인터랙션 응답성 개선
 
-#### 관리자 페이지
+</details>
+
+<details>
+<summary>관리자 페이지</summary>
 
 **주요 구현**
 
@@ -101,9 +105,62 @@ GPX 데이터를 기반으로 사용자 트래킹 경로를 시각화하고, 이
 
 - 데이터 관리, 콘텐츠 제어, AI 보조 기능을 관리자 화면에 통합하여 운영 흐름 개선
 
-#### 지도 기반 영상 생성 자동화 시스템
+</details>
+
+<details>
+<summary>지도 기반 영상 생성 자동화 시스템</summary>
 
 [예시 영상](https://the-trails.s3.ap-northeast-2.amazonaws.com/videos/2026/4/8647.mp4)
+
+**아키텍처 다이어그램**
+
+```mermaid
+flowchart TB
+    subgraph API["API Layer"]
+        A["Client Request"]
+        B["NestJS Orchestrator API"]
+        S["Job Status Store"]
+        A --> B
+        B --> S
+    end
+
+    subgraph QUEUE["Queue / Broker"]
+        C["BullMQ / Redis Queue"]
+    end
+
+    subgraph WORKERS["Docker Workers"]
+        D["Container #1<br/>Worker + Xorg :1<br/>1920x1080"]
+        E["Container #2<br/>Worker + Xorg :2<br/>1920x1080"]
+        F["Container #N<br/>Worker + Xorg :N<br/>1920x1080"]
+    end
+
+    subgraph RECORDING["Recording"]
+        D1["FFmpeg in Container #1"]
+        E1["FFmpeg in Container #2"]
+        F1["FFmpeg in Container #N"]
+    end
+
+    subgraph OUTPUT["Output"]
+        G["Result Storage"]
+        H["Callback / Event"]
+    end
+
+    B --> C
+    C --> D
+    C --> E
+    C --> F
+
+    D --> D1
+    E --> E1
+    F --> F1
+
+    D1 --> G
+    E1 --> G
+    F1 --> G
+
+    G --> H
+    H --> S
+```
 
 **주요 구현**
 
@@ -128,7 +185,10 @@ GPX 데이터를 기반으로 사용자 트래킹 경로를 시각화하고, 이
 - 병렬 처리 구조 도입으로 대량 영상 생성 처리 효율 개선
 - 서버 환경에서 WebGL 기반 지도 렌더링 및 영상 녹화 처리 안정화
 
-#### 지도 기반 미리보기 이미지 생성기
+</details>
+
+<details>
+<summary>지도 기반 미리보기 이미지 생성기</summary>
 
 **주요 구현**
 
@@ -147,6 +207,8 @@ GPX 데이터를 기반으로 사용자 트래킹 경로를 시각화하고, 이
 
 - 사용자 트랙 기반 콘텐츠를 시각적으로 확인할 수 있는 미리보기 생성 흐름 구축
 - 피드 및 공유 화면에서 사용할 지도 기반 썸네일 이미지 생성 자동화
+
+</details>
 
 ---
 
