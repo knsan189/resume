@@ -192,7 +192,7 @@ flowchart TB
 
 **주요 구현**
 
-- Redis Consumer 기반 작업 처리 구조로 사용자 트랙 미리보기 생성 요청 처리
+- Redis Stream Consumer 기반 작업 처리 구조로 사용자 트랙 미리보기 생성 요청 처리
 - 사용자 트랙을 지도 위에 렌더링하고 피드 및 공유 화면에 사용할 미리보기 이미지 생성
 - Puppeteer 기반 브라우저 자동화로 지도 화면 렌더링 및 스크린샷 캡처 흐름 제어
 - 지도 스타일, 트랙 경로, 표시 영역을 조합하여 일관된 미리보기 화면 구성
@@ -207,6 +207,29 @@ flowchart TB
 
 - 사용자 트랙 기반 콘텐츠를 시각적으로 확인할 수 있는 미리보기 생성 흐름 구축
 - 피드 및 공유 화면에서 사용할 지도 기반 썸네일 이미지 생성 자동화
+
+</details>
+
+<details>
+<summary>Redis Stream Consumer 기반 고부하 처리 서버 운영</summary>
+
+**주요 구현**
+
+- Redis Stream Consumer 역할의 고부하 처리 서버를 사내 온프레미스 환경에서 운영
+- EC2 비용과 처리 부하를 고려해 리소스 사용량이 큰 작업을 온프레미스 처리 서버로 분리
+- GPX parser 및 GeoJSON simplifier 작업을 Redis Stream 기반으로 수신하고 처리하는 흐름 구성
+- 온프레미스 처리 서버의 실행 환경과 운영 흐름 구성
+
+**기술**
+
+- Node.js, Redis Streams, GPX parser, GeoJSON simplifier
+- AWS EC2, AWS S3
+- Linux, Docker
+
+**성과**
+
+- Redis Stream Consumer 기반 처리 구조로 GPX 파싱 및 GeoJSON 단순화 작업을 서비스 서버와 분리
+- 고부하 처리 작업을 온프레미스 서버에서 수행하여 클라우드 비용 부담 완화
 
 </details>
 
