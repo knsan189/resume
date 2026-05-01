@@ -32,11 +32,17 @@ Puppeteer 기반 브라우저 자동화, WebGL 실행 환경 구성, Ollama 기�
 
 **주요 업무**
 
-- React, Next.js, Vite 기반 사용자 웹 및 관리자 페이지 개발
-- GPX, GeoJSON 기반 지도 데이터 처리 및 시각화 기능 구현
-- 여러 지도 provider의 API 차이를 흡수하는 지도 UI 및 인터랙션 구현
-- Puppeteer, FFmpeg, BullMQ, Redis 기반 지도 콘텐츠 생성 자동화 시스템 구현
-- Docker, Linux, AWS EC2/S3, 온프레미스 서버를 활용한 운영 환경 구성
+- 지도 기반 사용자 웹 및 관리자 시스템 개발
+- GPX, GeoJSON 기반 지도 데이터 처리 및 시각화 기능 개발
+- 지도 provider 연동 및 지도 인터랙션 구현
+- 지도 콘텐츠 생성 자동화 기능 개발
+- 서비스 운영을 위한 배포 및 서버 환경 구성 참여
+
+**주요 성과**
+
+- Google Maps, Naver Maps, Mapbox GL 등 여러 지도 provider의 API 차이를 흡수하는 구조 구현
+- Puppeteer, FFmpeg, BullMQ, Redis 기반 지도 영상 및 미리보기 이미지 생성 자동화 흐름 구축
+- Docker, Linux, AWS EC2/S3, 온프레미스 서버를 활용한 고부하 처리 운영 구조 구성
 - Jenkins 기반 배포 흐름을 GitLab CI로 일원화하여 배포 자동화 구조 개선
 
 ---

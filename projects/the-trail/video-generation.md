@@ -1,6 +1,10 @@
 # 지도 기반 영상 생성 자동화 시스템
 
-[예시 영상](https://the-trails.s3.ap-northeast-2.amazonaws.com/videos/2026/4/8647.mp4)
+## 예시 영상
+
+<video src="./assets/video.mp4" controls muted playsinline width="720"></video>
+
+[예시 영상 링크](https://the-trails.s3.ap-northeast-2.amazonaws.com/videos/2026/4/8647.mp4)
 
 사용자 GPX 기록을 React + Mapbox GL 기반 지도 화면에 렌더링하고, 경로 애니메이션을 재생한 뒤 FFmpeg으로 영상 파일을 생성하는 자동화 시스템입니다.
 
