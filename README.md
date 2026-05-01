@@ -1,4 +1,4 @@
-# 진하늘 이력서
+# 진하늘 | Frontend Developer
 
 ## Summary
 
