@@ -27,8 +27,8 @@ Puppeteer 기반 브라우저 자동화, WebGL 실행 환경 구성, Ollama 기�
 
 ### 시터스(CITUS)
 
-**2021.06 ~ 현재 (5년)**  
-지도 기반 서비스 및 관리 시스템 개발
+**기간**: 2021.06 ~ 현재 (5년)  
+**역할**: 지도 기반 서비스 및 관리 시스템 개발
 
 **주요 업무**
 
@@ -51,11 +51,12 @@ Puppeteer 기반 브라우저 자동화, WebGL 실행 환경 구성, Ollama 기�
 
 ### 더트레일(The Trail)
 
-**지도 기반 아웃도어 트래킹 및 콘텐츠 생성 서비스**  
-2025.09 ~ 현재 (8개월)  
-[https://thetrail.co.kr/](https://thetrail.co.kr/)
+**기간**: 2025.09 ~ 현재 (8개월)  
+**서비스**: [https://thetrail.co.kr/](https://thetrail.co.kr/)
 
 사용자의 운동 기록을 기반으로 이동 경로를 지도에 시각화하고, 이를 영상 및 미리보기 이미지 콘텐츠로 생성할 수 있는 서비스입니다.
+
+**상세 문서**
 
 - [프로젝트 상세](./projects/the-trail/README.md)
 - [지도 기반 영상 생성 자동화 시스템](./projects/the-trail/video-generation.md)
@@ -65,26 +66,31 @@ Puppeteer 기반 브라우저 자동화, WebGL 실행 환경 구성, Ollama 기�
 
 ### 루센 네비게이션 웹
 
-**Android 및 iOS WebView에 탑재된 차량용 지도 및 주행 안내 서비스**  
-2024.04 ~ 2024.10 (7개월)
+**기간**: 2024.04 ~ 2024.10 (7개월)
 
 Android 및 iOS 앱의 WebView에 탑재된 웹 기반 차량용 내비게이션 서비스입니다. MapLibre.js 기반 지도 화면에서 경로와 현재 위치를 표시하고, 주행 안내에 필요한 정보를 제공하는 인터페이스를 구현했습니다.
+
+**상세 문서**
 
 - [프로젝트 상세](./projects/rousen-navigation-web/README.md)
 
 ### 소방대원 실내 위치 추정 및 관제 시스템
 
-**2025.04.01 ~ 현재 (1년 1개월)**
+**기간**: 2025.04 ~ 현재 (1년 1개월)
 
 건물 도면을 2D 지도와 3D 공간으로 시각화하고, 소방대원의 위치를 매핑하여 실시간으로 모니터링할 수 있는 관제 시스템입니다.
+
+**상세 문서**
 
 - [프로젝트 상세](./projects/firefighter-indoor-positioning/README.md)
 
 ### 정밀주소 플랫폼 기반 재난 응급상황 신고·출동 서비스
 
-**2023.04.01 ~ 2025.12.31 (2년 9개월)**
+**기간**: 2023.04 ~ 2025.12 (2년 9개월)
 
 정밀주소 기반으로 재난 상황 발생 시 신고 접수 및 출동을 지원하고, 영상 통화를 통해 현장 상황을 실시간으로 전달할 수 있는 서비스입니다.
+
+**상세 문서**
 
 - [프로젝트 상세](./projects/emergency-dispatch/README.md)
 
@@ -94,7 +100,9 @@ Android 및 iOS 앱의 WebView에 탑재된 웹 기반 차량용 내비게이션
 
 ### @rousen/react-naver-maps
 
-**React용 Naver Maps Wrapper 라이브러리**
+React용 Naver Maps Wrapper 라이브러리입니다.
+
+**링크**
 
 - [npm](https://www.npmjs.com/package/@rousen/react-naver-maps)
 - [문서](https://knsan189.github.io/react-naver-maps/)
@@ -106,4 +114,4 @@ Android 및 iOS 앱의 WebView에 탑재된 웹 기반 차량용 내비게이션
 ## Education
 
 **공주대학교 컴퓨터공학과 중퇴**  
-2011.03 ~ 2015.02
+**기간**: 2011.03 ~ 2015.02 (4년)
