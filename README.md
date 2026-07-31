@@ -29,7 +29,6 @@ Puppeteer 기반 브라우저 자동화, WebGL 실행 환경 구성, Ollama 기�
 
 **기간**: 2021.06 ~ 현재 (5년)  
 **역할**: 지도 기반 서비스 및 관리 시스템 개발
-
 **주요 업무**
 
 - 지도 기반 사용자 웹 및 관리자 시스템 개발
@@ -97,6 +96,16 @@ Android 및 iOS 앱의 WebView에 탑재된 웹 기반 차량용 내비게이션
 ---
 
 ## Open Source
+
+### Codivew
+
+Git 변경사항을 Ollama 코딩 모델로 분석하고, 파일과 변경 라인별 피드백을 독립 실행형 HTML 리포트로 생성하는 로컬 AI 코드 리뷰 CLI입니다.
+
+**링크**
+
+- [npm](https://www.npmjs.com/package/codivew)
+- [GitHub](https://github.com/knsan189/codivew)
+- [프로젝트 상세](./projects/codivew/README.md)
 
 ### @rousen/react-naver-maps
 

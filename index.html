@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="지도 기반 서비스와 관리 시스템을 개발해온 프론트엔드 개발자 진하늘의 이력서입니다."
+    />
+    <title>진하늘 | Frontend Developer</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --background: #eef2f6;
+        --surface: #ffffff;
+        --text: #172033;
+        --muted: #657085;
+        --line: #dfe5ec;
+        --primary: #176b87;
+        --primary-soft: #e9f5f7;
+        --accent: #d6a756;
+        --shadow: 0 24px 64px rgba(23, 32, 51, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background:
+          radial-gradient(circle at 10% 0%, rgba(23, 107, 135, 0.12), transparent 28rem),
+          var(--background);
+        color: var(--text);
+        font-family:
+          Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", Inter, -apple-system,
+          BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.75;
+        word-break: keep-all;
+      }
+
+      a {
+        color: var(--primary);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.2em;
+      }
+
+      a:hover {
+        text-decoration-thickness: 2px;
+      }
+
+      .resume {
+        width: min(100% - 32px, 1040px);
+        margin: 48px auto;
+        overflow: hidden;
+        background: var(--surface);
+        border: 1px solid rgba(223, 229, 236, 0.85);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero {
+        position: relative;
+        padding: 72px 72px 64px;
+        overflow: hidden;
+        background: #112b3c;
+        color: #ffffff;
+      }
+
+      .hero::after {
+        position: absolute;
+        right: -80px;
+        bottom: -150px;
+        width: 380px;
+        height: 380px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 50%;
+        box-shadow:
+          0 0 0 48px rgba(255, 255, 255, 0.035),
+          0 0 0 96px rgba(255, 255, 255, 0.025);
+        content: "";
+      }
+
+      .eyebrow {
+        position: relative;
+        z-index: 1;
+        margin: 0 0 14px;
+        color: #8ed2dc;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        font-size: clamp(2.6rem, 7vw, 4.75rem);
+        line-height: 1.08;
+        letter-spacing: -0.055em;
+      }
+
+      h1 span {
+        display: block;
+        margin-top: 12px;
+        color: #b6c6d0;
+        font-size: 0.36em;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+      }
+
+      .hero-summary {
+        position: relative;
+        z-index: 1;
+        max-width: 690px;
+        margin: 32px 0 0;
+        color: #dbe5ea;
+        font-size: 1.05rem;
+      }
+
+      main {
+        padding: 24px 72px 72px;
+      }
+
+      section {
+        display: grid;
+        grid-template-columns: 180px minmax(0, 1fr);
+        gap: 36px;
+        padding: 48px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      section:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      h2 {
+        margin: 0;
+        color: var(--primary);
+        font-size: 0.84rem;
+        letter-spacing: 0.14em;
+        line-height: 1.5;
+        text-transform: uppercase;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 1.32rem;
+        line-height: 1.4;
+        letter-spacing: -0.025em;
+      }
+
+      h4 {
+        margin: 24px 0 8px;
+        font-size: 0.92rem;
+      }
+
+      p {
+        margin: 0 0 14px;
+      }
+
+      ul {
+        margin: 8px 0 0;
+        padding-left: 1.25rem;
+      }
+
+      li {
+        padding-left: 0.2rem;
+      }
+
+      li + li {
+        margin-top: 5px;
+      }
+
+      li::marker {
+        color: var(--primary);
+      }
+
+      .summary p:last-child {
+        margin-bottom: 0;
+      }
+
+      .stack-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 24px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .stack-list li {
+        margin: 0;
+        padding: 12px 14px;
+        background: #f7f9fb;
+        border-left: 3px solid var(--primary);
+        border-radius: 0 8px 8px 0;
+      }
+
+      .entry + .entry {
+        margin-top: 42px;
+        padding-top: 42px;
+        border-top: 1px dashed var(--line);
+      }
+
+      .entry-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 12px;
+      }
+
+      .period {
+        flex: 0 0 auto;
+        color: var(--muted);
+        font-size: 0.86rem;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .role,
+      .service {
+        margin-bottom: 18px;
+        color: var(--muted);
+      }
+
+      .link-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 14px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .link-list li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .link-list a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 36px;
+        padding: 6px 12px;
+        background: var(--primary-soft);
+        border-radius: 999px;
+        font-size: 0.84rem;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .link-list a::after {
+        margin-left: 6px;
+        content: "↗";
+        font-size: 0.82em;
+      }
+
+      .education {
+        margin: 0;
+      }
+
+      @media (max-width: 760px) {
+        body {
+          font-size: 15px;
+          line-height: 1.7;
+        }
+
+        .resume {
+          width: 100%;
+          margin: 0;
+          border: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+
+        .hero {
+          padding: 52px 24px 44px;
+        }
+
+        main {
+          padding: 8px 24px 48px;
+        }
+
+        section {
+          grid-template-columns: 1fr;
+          gap: 18px;
+          padding: 36px 0;
+        }
+
+        .stack-list {
+          grid-template-columns: 1fr;
+        }
+
+        .entry-head {
+          display: block;
+        }
+
+        .period {
+          display: block;
+          margin-top: 5px;
+        }
+      }
+
+      @media print {
+        @page {
+          size: A4;
+          margin: 12mm;
+        }
+
+        body {
+          background: #ffffff;
+          font-size: 10.5pt;
+        }
+
+        .resume {
+          width: 100%;
+          margin: 0;
+          border: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+
+        .hero {
+          padding: 14mm 12mm 12mm;
+          print-color-adjust: exact;
+          -webkit-print-color-adjust: exact;
+        }
+
+        .hero::after {
+          display: none;
+        }
+
+        main {
+          padding: 4mm 12mm 10mm;
+        }
+
+        section {
+          grid-template-columns: 38mm minmax(0, 1fr);
+          gap: 8mm;
+          padding: 8mm 0;
+        }
+
+        .entry,
+        .stack-list li {
+          break-inside: avoid;
+        }
+
+        .link-list a {
+          color: var(--text);
+          background: transparent;
+          padding: 0;
+        }
+
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <article class="resume">
+      <header class="hero">
+        <p class="eyebrow">Frontend Developer</p>
+        <h1>진하늘 <span>Frontend Developer</span></h1>
+        <p class="hero-summary">
+          지도 기반 서비스와 관리 시스템을 중심으로 프론트엔드 개발 경험을 쌓아온
+          개발자입니다.
+        </p>
+      </header>
+
+      <main>
+        <section aria-labelledby="summary-title">
+          <h2 id="summary-title">Summary</h2>
+          <div class="summary">
+            <p>
+              React, Next.js 기반 UI 개발뿐 아니라 Google Maps, Naver Maps, Mapbox GL,
+              MapLibre GL 등 다양한 지도 provider를 다루며 지도 시각화와 사용자
+              인터랙션을 구현해왔습니다.
+            </p>
+            <p>
+              Puppeteer 기반 브라우저 자동화, WebGL 실행 환경 구성, Ollama 기반 AI 기능
+              적용 등 서비스 운영에 필요한 문제를 직접 해결해왔습니다. 기획이 구체화되지
+              않은 단계에서도 요구사항을 정리하고, 화면 구조와 기능 흐름을 먼저 구현해
+              제품 방향을 빠르게 검증하는 방식으로 일해왔습니다.
+            </p>
+          </div>
+        </section>
+
+        <section aria-labelledby="stack-title">
+          <h2 id="stack-title">Tech Stack</h2>
+          <ul class="stack-list">
+            <li><strong>Frontend</strong>: React, Next.js, Vite, Redux Toolkit, TypeScript</li>
+            <li><strong>UI</strong>: Material UI, Emotion.js</li>
+            <li>
+              <strong>Visualization</strong>: Google Maps, Naver Maps, Mapbox GL, MapLibre GL,
+              Three.js, WebGL
+            </li>
+            <li><strong>AI</strong>: Ollama</li>
+            <li><strong>Automation</strong>: Puppeteer</li>
+            <li><strong>Backend</strong>: NestJS, Node.js, Express, Spring Boot</li>
+            <li>
+              <strong>Infra / DevOps</strong>: Docker, Nginx, Apache2, Linux, AWS EC2, AWS S3
+            </li>
+            <li><strong>Etc</strong>: WebSocket, Redis</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="experience-title">
+          <h2 id="experience-title">Experience</h2>
+          <div class="entry">
+            <div class="entry-head">
+              <h3>시터스(CITUS)</h3>
+              <span class="period">2021.06 ~ 현재 (5년)</span>
+            </div>
+            <p class="role">지도 기반 서비스 및 관리 시스템 개발</p>
+
+            <h4>주요 업무</h4>
+            <ul>
+              <li>지도 기반 사용자 웹 및 관리자 시스템 개발</li>
+              <li>GPX, GeoJSON 기반 지도 데이터 처리 및 시각화 기능 개발</li>
+              <li>지도 provider 연동 및 지도 인터랙션 구현</li>
+              <li>지도 콘텐츠 생성 자동화 기능 개발</li>
+              <li>서비스 운영을 위한 배포 및 서버 환경 구성 참여</li>
+            </ul>
+
+            <h4>주요 성과</h4>
+            <ul>
+              <li>
+                Google Maps, Naver Maps, Mapbox GL 등 여러 지도 provider의 API 차이를
+                흡수하는 구조 구현
+              </li>
+              <li>
+                Puppeteer, FFmpeg, BullMQ, Redis 기반 지도 영상 및 미리보기 이미지 생성
+                자동화 흐름 구축
+              </li>
+              <li>
+                Docker, Linux, AWS EC2/S3, 온프레미스 서버를 활용한 고부하 처리 운영 구조
+                구성
+              </li>
+              <li>Jenkins 기반 배포 흐름을 GitLab CI로 일원화하여 배포 자동화 구조 개선</li>
+            </ul>
+          </div>
+        </section>
+
+        <section aria-labelledby="projects-title">
+          <h2 id="projects-title">Projects</h2>
+          <div>
+            <article class="entry">
+              <div class="entry-head">
+                <h3>더트레일(The Trail)</h3>
+                <span class="period">2025.09 ~ 현재 (8개월)</span>
+              </div>
+              <p class="service">
+                서비스:
+                <a href="https://thetrail.co.kr/" target="_blank" rel="noreferrer"
+                  >thetrail.co.kr</a
+                >
+              </p>
+              <p>
+                사용자의 운동 기록을 기반으로 이동 경로를 지도에 시각화하고, 이를 영상 및
+                미리보기 이미지 콘텐츠로 생성할 수 있는 서비스입니다.
+              </p>
+              <ul class="link-list" aria-label="더트레일 상세 링크">
+                <li><a href="projects/the-trail/README.md">프로젝트 상세</a></li>
+                <li>
+                  <a href="projects/the-trail/video-generation.md">지도 기반 영상 생성 자동화</a>
+                </li>
+                <li>
+                  <a href="projects/the-trail/preview-generator.md"
+                    >지도 기반 미리보기 이미지 생성기</a
+                  >
+                </li>
+                <li>
+                  <a href="projects/the-trail/stream-consumer-infra.md"
+                    >Redis Stream Consumer 운영</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://the-trails.s3.ap-northeast-2.amazonaws.com/videos/2026/4/8647.mp4"
+                    target="_blank"
+                    rel="noreferrer"
+                    >예시 영상</a
+                  >
+                </li>
+              </ul>
+            </article>
+
+            <article class="entry">
+              <div class="entry-head">
+                <h3>루센 네비게이션 웹</h3>
+                <span class="period">2024.04 ~ 2024.10 (7개월)</span>
+              </div>
+              <p>
+                Android 및 iOS 앱의 WebView에 탑재된 웹 기반 차량용 내비게이션
+                서비스입니다. MapLibre.js 기반 지도 화면에서 경로와 현재 위치를 표시하고,
+                주행 안내에 필요한 정보를 제공하는 인터페이스를 구현했습니다.
+              </p>
+              <ul class="link-list" aria-label="루센 네비게이션 웹 상세 링크">
+                <li><a href="projects/rousen-navigation-web/README.md">프로젝트 상세</a></li>
+              </ul>
+            </article>
+
+            <article class="entry">
+              <div class="entry-head">
+                <h3>소방대원 실내 위치 추정 및 관제 시스템</h3>
+                <span class="period">2025.04 ~ 현재 (1년 1개월)</span>
+              </div>
+              <p>
+                건물 도면을 2D 지도와 3D 공간으로 시각화하고, 소방대원의 위치를 매핑하여
+                실시간으로 모니터링할 수 있는 관제 시스템입니다.
+              </p>
+              <ul class="link-list" aria-label="소방대원 실내 위치 추정 및 관제 시스템 상세 링크">
+                <li>
+                  <a href="projects/firefighter-indoor-positioning/README.md">프로젝트 상세</a>
+                </li>
+              </ul>
+            </article>
+
+            <article class="entry">
+              <div class="entry-head">
+                <h3>정밀주소 플랫폼 기반 재난 응급상황 신고·출동 서비스</h3>
+                <span class="period">2023.04 ~ 2025.12 (2년 9개월)</span>
+              </div>
+              <p>
+                정밀주소 기반으로 재난 상황 발생 시 신고 접수 및 출동을 지원하고, 영상
+                통화를 통해 현장 상황을 실시간으로 전달할 수 있는 서비스입니다.
+              </p>
+              <ul class="link-list" aria-label="정밀주소 플랫폼 기반 재난 응급상황 서비스 상세 링크">
+                <li><a href="projects/emergency-dispatch/README.md">프로젝트 상세</a></li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section aria-labelledby="open-source-title">
+          <h2 id="open-source-title">Open Source</h2>
+          <div>
+            <article class="entry">
+              <h3>Codivew</h3>
+              <p class="role">
+                Git 변경사항을 Ollama 코딩 모델로 분석하고, 파일과 변경 라인별 피드백을 독립
+                실행형 HTML 리포트로 생성하는 로컬 AI 코드 리뷰 CLI입니다.
+              </p>
+              <ul class="link-list" aria-label="Codivew 링크">
+                <li>
+                  <a
+                    href="https://www.npmjs.com/package/codivew"
+                    target="_blank"
+                    rel="noreferrer"
+                    >npm</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/knsan189/codivew"
+                    target="_blank"
+                    rel="noreferrer"
+                    >GitHub</a
+                  >
+                </li>
+                <li><a href="projects/codivew/README.md">프로젝트 상세</a></li>
+              </ul>
+            </article>
+
+            <article class="entry">
+              <h3>@rousen/react-naver-maps</h3>
+              <p class="role">React용 Naver Maps Wrapper 라이브러리입니다.</p>
+              <ul class="link-list" aria-label="react-naver-maps 링크">
+                <li>
+                  <a
+                    href="https://www.npmjs.com/package/@rousen/react-naver-maps"
+                    target="_blank"
+                    rel="noreferrer"
+                    >npm</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://knsan189.github.io/react-naver-maps/"
+                    target="_blank"
+                    rel="noreferrer"
+                    >문서</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/knsan189/react-naver-maps"
+                    target="_blank"
+                    rel="noreferrer"
+                    >GitHub</a
+                  >
+                </li>
+                <li><a href="projects/react-naver-maps/README.md">프로젝트 상세</a></li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section aria-labelledby="education-title">
+          <h2 id="education-title">Education</h2>
+          <div>
+            <h3>공주대학교 컴퓨터공학과 중퇴</h3>
+            <p class="education period">2011.03 ~ 2015.02 (4년)</p>
+          </div>
+        </section>
+      </main>
+    </article>
+  </body>
+</html>
