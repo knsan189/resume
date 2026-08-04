@@ -99,12 +99,13 @@ Android 및 iOS 앱의 WebView에 탑재된 웹 기반 차량용 내비게이션
 
 ### Codivew
 
-Git 변경사항을 Ollama 코딩 모델로 분석하고, 파일과 변경 라인별 피드백을 독립 실행형 HTML 리포트로 생성하는 로컬 AI 코드 리뷰 CLI입니다.
+Git 변경사항을 로컬 Ollama 모델로 분석하고, 파일과 변경 라인별 피드백을 제공하는 AI 코드 리뷰 도구입니다. CLI와 VS Code 확장에서 동일한 리뷰 엔진을 사용할 수 있도록 구성했습니다.
 
 **링크**
 
 - [npm](https://www.npmjs.com/package/codivew)
-- [GitHub](https://github.com/knsan189/codivew)
+- [CLI GitHub](https://github.com/codivew/codivew)
+- [VS Code 확장 GitHub](https://github.com/codivew/vscode)
 - [프로젝트 상세](./projects/codivew/README.md)
 
 ### @rousen/react-naver-maps
